@@ -14,7 +14,22 @@ const connect = function () {
 
   conn.on('connect', () => {
     conn.write('Name: SYF');
+    setInterval(() => conn.write('Move: up'), 1000);
+    
+
+
+   // setInterval(() => conn.write('Move up'), 1000);
+    // conn.write('Move: down');
+    // conn.write('Move: left');
+    // conn.write('Move: right');
+    // code that sends/writes data to server
   });
+
+  conn.on('error', (err) => {
+    console.log("Error: ", err.message);
+  })
+
+
 
   conn.on("data", (message) => {
     console.log(message);
