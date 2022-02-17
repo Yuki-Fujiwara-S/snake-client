@@ -13,7 +13,7 @@ const connect = function () {
   });
 
   conn.on('connect', () => {
-    
+    conn.write('Name: SYF');
   });
 
   conn.on('error', (err) => {
